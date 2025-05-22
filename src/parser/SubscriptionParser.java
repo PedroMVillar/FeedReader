@@ -18,6 +18,8 @@ import parser.ParseException;
  * */
 public class SubscriptionParser extends GeneralParser<Subscription> {
 
+    private String jsonPath;
+
     /** Abrir la “fuente” desde un fichero */
     @Override
     protected InputStream openSource(String sourcePath) throws IOException {
@@ -28,7 +30,7 @@ public class SubscriptionParser extends GeneralParser<Subscription> {
     /** Parseo real: de InputStream → Subscription */
     @Override
     protected Subscription doParse(InputStream in) throws ParseException {
-
+        
     }
 
     /** Post‐proceso / normalización (opcional) */
