@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import namedEntity.*;
 import namedEntity.NamedEntity;
 import namedEntity.heuristic.Heuristic;
 
