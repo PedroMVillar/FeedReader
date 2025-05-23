@@ -93,13 +93,6 @@ public class FeedReaderMain {
 			} catch (Exception e) {
 				// TODO: handle exception
 			}
-			/*
-			Leer el archivo de suscription por defecto;
-			Llamar al httpRequester para obtenr el feed del servidor
-			Llamar al Parser especifico para extrar los datos necesarios por la aplicacion 
-			Llamar al constructor de Feed
-			LLamar al prettyPrint del Feed para ver los articulos del feed en forma legible y amigable para el usuario
-			*/
 			
 		} else if (args.length == 1){
 			
