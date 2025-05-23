@@ -6,43 +6,22 @@ import java.text.ParseException;
 
 /*Esta clase modela los atributos y metodos comunes a todos los distintos tipos de parser existentes en la aplicacion*/
 public abstract class GeneralParser<T> {
-    /**
-     * Read or recive the input
-     * @param path
-     * @return
-     * @throws IOException
-     */
-    protected abstract InputStream openSource(String path) throws IOException;
+    
+    /** Ruta (o identificador) de la fuente a leer */
+    protected final String sourcePath;
     
     /**
-     * Convert bytes into T object
-     * @param in
-     * @return
-     * @throws ParseException
+     * Constructor: recibe la ruta del recurso a parsear.
+     * Todas las subclases heredarán y almacenarán esa ruta.
      */
-    protected abstract T doParse(InputStream in) throws ParseException;
-
-    /**
-     * Normalize type T 
-     * @param parsed
-     * @return
-     */
-    protected T normalize(T parsed) {
-        return parsed;
+    public GeneralParser(String sourcePath) {
+        this.sourcePath = sourcePath;
     }
-
+    
     /**
-     * Parse de input to anything
-     * @param sourcePath
-     * @return
-     * @throws IOException
-     * @throws ParseException
+     * Método principal que el cliente invoca.
+     * @return instancia de T construida a partir del contenido
+     * @throws Exception para propagar errores
      */
-    public final T parse(String sourcePath) throws IOException, ParseException {   
-        try (InputStream in = openSource(sourcePath)) {
-            in.reset();
-            T parsed = doParse(in);
-            return normalize(parsed);
-        }
-    }
+    public abstract T parse() throws Exception;
 }
