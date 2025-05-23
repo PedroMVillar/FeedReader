@@ -79,7 +79,7 @@ public class FeedReaderMain {
 						// Usamos el Feed ----------- VER ACÁ QUE ONDA --------------
 						feed.prettyPrint();
 					}
-					else if ("reedit".equalsIgnoreCase(sub.getUrlType())) {
+					else if ("reddit".equalsIgnoreCase(sub.getUrlType())) {
 						// Creo el parser pasándole el JSON en rawBody
 						RedditParser redditParser = new RedditParser(rawBody);
 						// Parseo a Feed
